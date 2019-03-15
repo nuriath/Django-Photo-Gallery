@@ -25,6 +25,7 @@ To run locally, it is assumed that you have python installed on your system.
 
  -Mwangaza Nuriath
 
-
+## License
+ -This project is licensed under the MIT License - see the LICENSE.md file for details
 
 
