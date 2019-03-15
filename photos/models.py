@@ -23,7 +23,7 @@ class Category(models.Model):
         return self.category
 
     def save_category(self):
-        self.save()    
+        self.save()   
 
     def update_category(self):
         self.update()        
