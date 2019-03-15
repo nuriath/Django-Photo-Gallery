@@ -13,6 +13,7 @@ To run locally, it is assumed that you have python installed on your system.
  -Install the requirements. pip install -r requirements.txt
  -Set DEBUG = True in settings.py
  -Run the server. python manage.py runserver
+ -create a database
 
 ## Deployment
  -When you deploy on heroku the dependencies you specify in your requirements.txt file are automatically installed before app startup.
