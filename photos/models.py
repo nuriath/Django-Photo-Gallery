@@ -40,6 +40,7 @@ class Image(models.Model):
     description = models.CharField(max_length =250)
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
+    pub_date = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.name
