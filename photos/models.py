@@ -20,7 +20,7 @@ class Category(models.Model):
     category = models.CharField(max_length =30)
 
     def __str__(self):
-        return self.name
+        return self.category
 
     def save_category(self):
         self.save()    
@@ -33,14 +33,15 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-    Image = models.CharField(max_length =30)
+    image = models.CharField(max_length =30)
     name = models.CharField(max_length =30)
-    description = models.CharField(max_length =30)
+    description = models.CharField(max_length =250)
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
+    article_image = models.ImageField(upload_to = 'image/')
 
     def __str__(self):
-        return self.name
+        return self.image
 
     def save_image(self):
         self.save()    
@@ -60,7 +61,10 @@ class Image(models.Model):
     def filter_by_location(location):
         self.filter_by_location()    
      
-
+    @classmethod
+    def search_by_title(cls,search_term):
+        photos = cls.objects.filter(title__icontains=search_term)
+        return photos
 
 
 
