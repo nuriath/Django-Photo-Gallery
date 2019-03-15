@@ -64,7 +64,7 @@ class Image(models.Model):
         self.filter_by_location()    
      
     @classmethod
-    def search_by_title(cls,search_term):
+    def search_by_category(cls,search_term):
         photos = cls.objects.filter(name__icontains=search_term)
         return photos
 

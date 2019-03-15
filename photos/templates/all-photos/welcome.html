@@ -4,24 +4,27 @@
 {{block.super}}
 
 
-<center><div class="container">
+<div class="container">
 
     <!-- Looping through photos   -->
     {% for photos_item in photos %}
 
-    <center><div class="row">
+    <div class="row">
         <!-- displaying Photos name -->
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h2 class="text-center"> {{ photos_item.name }} </h2>
-        </div>
-    </div></center>
+        <center><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h2 class="text-center"> {{ photos_item.name }} </h2><br>
+            <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image"><br><br><hr>
+            
+        </div></center>
+    </div>
 
     <!--Display news Article images  -->
-    <center><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image">
-    </div></center>
-
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    </div>
 </div>
+
+
+
 {% empty %}
 <div class="row">
     <h2 class="text-center">There No Photos Items</h2>
