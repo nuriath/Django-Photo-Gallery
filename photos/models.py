@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Create your models here.
 class Location(models.Model):
@@ -35,7 +36,7 @@ class Category(models.Model):
 class Image(models.Model):
     
     name = models.CharField(max_length =30)
-    image = models.ImageField(upload_to = 'image/')
+    image = models.ImageField(upload_to = 'gallery/s')
     description = models.CharField(max_length =250)
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
@@ -66,5 +67,9 @@ class Image(models.Model):
         photos = cls.objects.filter(title__icontains=search_term)
         return photos
 
-
+    @classmethod
+    def todays_photos(cls):
+        today = dt.date.today()
+        photos = cls.objects.filter(pub_date__date = today)
+        return photos
 
