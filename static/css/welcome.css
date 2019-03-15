@@ -4,9 +4,10 @@ h1
   color: rgb(128, 0, 28);
 }
 #image{
-  float: left;
-
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 body{
-  background-color:lightblue;
+  background-color:rgb(186, 211, 219);
 }

@@ -15,4 +15,12 @@ To run locally, it is assumed that you have python installed on your system.
  -Run the server. python manage.py runserver
 
 ## Deployment
+ -When you deploy on heroku the dependencies you specify in your requirements.txt file are automatically installed before app startup.
+ 
+ $ heroku create <app-name>
+ $ git push heroku master
+ $ heroku open
+
+## Built With
+
 
