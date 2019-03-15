@@ -4,22 +4,22 @@
 {{block.super}}
 
 
-<div class="container">
+<center><div class="container">
 
     <!-- Looping through photos   -->
     {% for photos_item in photos %}
 
-    <div class="row">
+    <center><div class="row">
         <!-- displaying Photos name -->
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <h2 class="text-center"> {{ photos_item.name }} </h2>
         </div>
-    </div>
+    </div></center>
 
     <!--Display news Article images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <center><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image">
-    </div>
+    </div></center>
 
 </div>
 {% empty %}
