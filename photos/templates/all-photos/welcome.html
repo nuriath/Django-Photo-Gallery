@@ -11,36 +11,41 @@
 
     <div class="row">
         <!-- displaying Photos name -->
-        <center><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">photos_item_id
-            <h2 class="text-center"> {{ photos_item.name }} </h2><br>
-            <a href= '' data-toggle="modal" data-target="#{{photos_item_id}}" ><img src="{{photos_item.image.url}}" class="img-responsive" alt="Image"></a><br><br><hr>
-            
-        </div></center>
+        <center>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h2 class="text-center"> {{ photos_item.name }} </h2><br>
+                <a href='' data-toggle="modal" data-target="#{{photos_item.id}}"><img src="{{photos_item.image.url}}"
+                        class="img-responsive" alt="Image"></a><br><br>
+                <hr>
+
+            </div>
+        </center>
     </div>
     <!--Display news Article images  -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     </div>
     <div id="{{photos_item.id}}" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-          
-              <!-- Modal content-->
-              <div class="modal-content">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
                 <div class="modal-header">
                     <h2>{{photos_item.name}}</h2>
                     <img src="{{photos_item.image.url}}" class="img-responsive" alt="Image">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Modal Header</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ photos_item.category }}</h4>
+                    <h4 class="modal-title">{{ photos_item.location }}</h4>
                 </div>
                 <div class="modal-body">
-                  <p>Some text in the modal.</p>
+                    <p>{{ photos_item.description }}</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-              </div>
-          
             </div>
-          </div>
+
+        </div>
+    </div>
 </div>
 
 
@@ -51,5 +56,5 @@
 </div>
 {% endfor %}
 
-</div>
+</div><br><br>
 {% endblock %}

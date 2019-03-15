@@ -69,6 +69,16 @@ class Image(models.Model):
         return photos
 
     @classmethod
+    def search_by_location(cls,search_term):
+        photos = cls.objects.filter(location__icontains=search_term)
+        return photos  
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        photos = cls.objects.filter(name__icontains=search_term)
+        return photos      
+
+    @classmethod
     def todays_photos(cls):
         today = dt.date.today()
         photos = cls.objects.filter(pub_date__date = today)
