@@ -5,11 +5,13 @@ from .models import Image
 
 def photos_today(request):
     date = dt.date.today()
-    photos = Image.todays_photos()
+    photos = Image.objects.all()
     return render(request, 'all-photos/today-photos.html', {"date": date,"photos":photos})
 # Create your views here.
 def welcome(request):
-    return render(request, 'all-photos/welcome.html')
+     
+    photos = Image.objects.all()
+    return render(request, 'all-photos/welcome.html', {"photos":photos})
 
 def search_results(request):
 
@@ -22,6 +24,6 @@ def search_results(request):
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'all-potos/search.html',{"message":message})
+        return render(request, 'all-photos/search.html',{"message":message})
 
 
