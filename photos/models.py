@@ -33,13 +33,13 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-    image = models.CharField(max_length =30)
+    
     name = models.CharField(max_length =30)
+    image = models.ImageField(upload_to = 'image/')
     description = models.CharField(max_length =250)
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
-    article_image = models.ImageField(upload_to = 'image/')
-
+    
     def __str__(self):
         return self.image
 
