@@ -1,4 +1,4 @@
-# PHOTOS GALLERY
+# Photos Gallery
 
 This is a gallery application that have different categories of photos
 
