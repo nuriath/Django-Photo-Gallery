@@ -54,9 +54,6 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()  
 
-    def get_image_by_id(id):
-        self.get_image_by_id()    
-
     def search_image(category):
         self.search_image()        
 
